@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 from langchain.globals import set_verbose, set_debug
-from langchain_groq.chat_models import ChatGroq
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.constants import END
 from langgraph.graph import StateGraph
 from langgraph.prebuilt import create_react_agent
@@ -14,7 +14,7 @@ _ = load_dotenv()
 set_debug(True)
 set_verbose(True)
 
-llm = ChatGroq(model="openai/gpt-oss-120b")
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.2)
 
 
 def planner_agent(state: dict) -> dict:
