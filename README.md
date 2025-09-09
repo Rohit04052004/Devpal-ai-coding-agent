@@ -31,8 +31,8 @@
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/devpal.git
-   cd devpal
+   git clone https://github.com/Rohit04052004/Devpal-ai-coding-agent.git
+   cd Devpal-ai-coding-agent
    ```
 
 2. **Create and activate a virtual environment**:
