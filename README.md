@@ -1,15 +1,18 @@
 # 🤖 DevPal
 
-**DevPal** is an AI-powered coding assistant built with [LangGraph](https://github.com/langchain-ai/langgraph).  
-It works like a multi-agent development team that can take a natural language request and transform it into a complete, working project — file by file — using real developer workflows.
+**DevPal** is an AI-powered coding assistant that transforms natural language requests into fully functional applications. It simulates a multi-agent development team to understand your requirements, create a plan, and build the project step by step.
 
 ---
 
-## 🏗️ Architecture
+## 🌟 Key Features
 
-- **Planner Agent** – Analyzes your request and generates a detailed project plan.
-- **Architect Agent** – Breaks down the plan into specific engineering tasks with explicit context for each file.
-- **Coder Agent** – Implements each task, writes directly into files, and uses available tools like a real developer.
+- **Natural Language Understanding**: Simply describe your idea in plain English.
+- **Multi-Agent Architecture**: A team of specialized AI agents collaborates to build your project:
+  - **Planner Agent**: Creates a high-level plan.
+  - **Architect Agent**: Designs the detailed engineering tasks.
+  - **Coder Agent**: Writes the code, file by file.
+- **Real Developer Workflow**: Uses standard tools and practices to generate clean, maintainable code.
+- **Interactive and Iterative**: Work with the AI to refine and build upon your ideas.
 
 <div style="text-align: center;">
     <img src="resources/dev_pal_diagram.png" alt="DevPal Architecture" width="90%"/>
@@ -18,61 +21,84 @@ It works like a multi-agent development team that can take a natural language re
 ---
 
 ## 🚀 Getting Started
+
 ### Prerequisites
-- Make sure you have uv installed, follow the instructions [here](https://docs.astral.sh/uv/getting-started/installation/) to install it.
-- Ensure that you have created a groq account and have your API key ready. Create an API key [here](https://console.groq.com/keys).
 
-### ⚙️ **Instsllstion and Startup**
-- Create a virtual environment using: `uv venv` and activate it using `source .venv/bin/activate`
-- Install the dependencies using: `uv pip install -r pyproject.toml`
-- Create a `.env` file and add the variables and their respective values mentioned in the `.sample_env` file
+- **UV**: Ensure you have `uv` installed. Follow the official [installation guide](https://docs.astral.sh/uv/getting-started/installation/).
+- **Gemini API Key**: You'll need a Google AI Studio account and an API key. Create one [here](https://aistudio.google.com/app/apikey).
 
-Now that we are done with all the set-up & installation steps we can start the application using the following command:
-  ```bash
-    python main.py
-  ```
+### ⚙️ Installation and Startup
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/devpal.git
+   cd devpal
+   ```
+
+2. **Create and activate a virtual environment**:
+   ```bash
+   uv venv
+   source .venv/bin/activate
+   ```
+
+3. **Install dependencies**:
+   ```bash
+   uv pip install -r requirements.txt
+   ```
+
+4. **Set up environment variables**:
+   - Create a `.env` file from the `.sample_env` template.
+   - Add your `GEMINI_API_KEY` to the `.env` file.
+
+5. **Run the application**:
+   ```bash
+   python main.py
+   ```
 
 ### 🧪 Example Prompts
-- Create a to-do list application using html, css, and javascript.
-- Create a simple calculator web application.
-- Create a simple blog API in FastAPI with a SQLite database.
 
-## Projects
-
-This repository contains two mini-projects:
-
-### 1. Calculator App
-
-A simple, stylish calculator built with HTML, CSS, and JavaScript.
-
-**Features:**
-- Basic arithmetic operations (add, subtract, multiply, divide).
-- Clear and backspace functionality.
-- Responsive design.
-- Dark mode theme.
-
-**To Run:**
-
-Open `calculator/index.html` in your browser.
-
-### 2. Todo App
-
-A lightweight todo list application to manage your tasks.
-
-**Features:**
-- Add, edit, and delete tasks.
-- Mark tasks as complete.
-- In-place editing of tasks.
-- Data saved to local storage.
-
-**To Run:**
-
-Open `todo-app/index.html` in your browser.
-
+- "Build a to-do list application using HTML, CSS, and JavaScript."
+- "Create a simple calculator web app."
+- "Develop a blog API in FastAPI with a SQLite database."
 
 ---
+
+## 📁 Project Structure
+
+- **/agent**: Contains the core multi-agent logic.
+- **/api**: The FastAPI backend that serves the application.
+- **/frontend**: The user interface for interacting with DevPal.
+- **/generated_project**: The output directory for the projects you create.
+
 ---
 
-## Author
+## 🤔 How It Works
+
+DevPal uses a sophisticated multi-agent system powered by LangGraph to manage the development process. Here’s a breakdown of the workflow:
+
+1.  **Input**: You provide a high-level description of the application you want to build.
+2.  **Planning**: The **Planner Agent** receives your request and creates a structured plan, outlining the necessary steps and technologies.
+3.  **Architecture**: The **Architect Agent** takes the plan and designs the software architecture, defining the file structure, components, and their interactions.
+4.  **Coding**: The **Coder Agent** receives the architectural plan and writes the code for each file, one by one. It can also read existing files to ensure consistency.
+5.  **Output**: The completed project is saved in the `generated_project` directory, ready for you to review and run.
+
+This entire process is automated, allowing you to go from idea to a functional prototype in minutes.
+
+---
+
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue.
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+---
+
+## ✍️ Author
 
 Rohit Chigatapu
