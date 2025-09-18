@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: devpal-app
-        image: <DOCKERHUB_USERNAME>/devpal:latest
+        image: rohii0405/devpal:latest
         ports:
         - containerPort: 8000
         env:
