@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devpal-app
+  namespace: devpal-review
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devpal-app
+  template:
+    metadata:
+      labels:
+        app: devpal-app
+    spec:
+      containers:
+      - name: devpal-app
+        image: <DOCKERHUB_USERNAME>/devpal:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: ENVIRONMENT
+          value: "review"

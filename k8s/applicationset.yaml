@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: devpal-multi-env
+spec:
+  generators:
+    - list:
+        elements:
+          - namespace: devpal-review
+            env: review
+          - namespace: devpal-staging
+            env: staging
+          - namespace: devpal-prod
+            env: production
+  template:
+    metadata:
+      name: devpal-{{env}}
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Rohit04052004/Devpal-ai-coding-agent.git
+        targetRevision: main
+        path: k8s
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{namespace}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
